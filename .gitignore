@@ -1,0 +1,63 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Native / CUDA build outputs
+build/
+dist/
+*.egg-info/
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.exe
+*.ptx
+*.cubin
+
+# Local environments and secrets
+.env
+.env.*
+!.env.example
+*.local.yaml
+*.local.yml
+*.local.json
+
+# Models, datasets, checkpoints, and experiment trackers
+models/
+datasets/
+checkpoints/
+outputs/
+runs/
+wandb/
+mlruns/
+*.ckpt
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# Profiler and trace outputs
+*.nsys-rep
+*.ncu-rep
+*.qdrep
+*.sqlite
+*.trace.json
+
+# Downloaded resources are opt-in: metadata is tracked, binary documents are ignored by default.
+resources/papers/*
+!resources/papers/.gitkeep
+resources/docs/*
+!resources/docs/.gitkeep

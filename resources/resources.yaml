@@ -1,0 +1,539 @@
+# 资料元数据。下载前确认来源允许本地保存；网络讲解经交叉核查后也可收录。
+# status: unread | reading | read | reviewed
+# 新增条目时建议记录：source_tier: primary | secondary | community
+# 以及 verification: primary-source | cross-checked | unverified
+# 现有条目未标注这两个字段时，按 type 和 URL 判断，不代表未经核查。
+resources:
+  - id: ai-infra-learning-path
+    title: "AI Infra 学习路线"
+    type: guide
+    authors:
+      - "AIInfraGuide contributors"
+    url: "https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"
+    topics: [roadmap, ai-infra, interview-guide]
+    status: reading
+    local_path: null
+    notes: "本仓库主路线及面试需求来源；页面标注日期为 2026-03-26。已完成学习路线核对，面试宝典/面经内容正在专项索引。"
+
+  - id: ai-infra-interview-guide
+    title: "AIInfraGuide 面试宝典"
+    type: interview-index
+    authors:
+      - "AIInfraGuide contributors"
+    url: "https://caomaolufei.github.io/AIInfraGuide/interview/"
+    topics: [interview, interview-experience, ai-infra, roadmap]
+    status: reading
+    local_path: null
+    source_tier: community
+    verification: cross-checked
+    notes: "真实需求轴主入口；2026-09-21 核对首页和官方仓库，页面显示 181 篇面经、65 家公司、7 个梯队，docs/interview/ 有 181 个 Markdown。10 篇综合面经主题已核对，页面统计不代表行业总体频率。"
+
+  - id: attention-is-all-you-need
+    title: "Attention Is All You Need"
+    type: paper
+    authors: ["Ashish Vaswani", "Noam Shazeer", "Niki Parmar", "Jakob Uszkoreit", "Llion Jones", "Aidan N. Gomez", "Lukasz Kaiser", "Illia Polosukhin"]
+    url: "https://arxiv.org/abs/1706.03762"
+    topics: [transformer, attention, prerequisites]
+    status: unread
+    local_path: null
+    notes: "Transformer 基础论文。"
+
+  - id: illustrated-transformer
+    title: "The Illustrated Transformer"
+    type: tutorial
+    authors: ["Jay Alammar"]
+    url: "https://jalammar.github.io/illustrated-transformer/"
+    topics: [transformer, prerequisites]
+    status: unread
+    local_path: null
+    notes: "Transformer 可视化入门。"
+
+  - id: pytorch-60-minute-blitz
+    title: "Deep Learning with PyTorch: A 60 Minute Blitz"
+    type: official-doc
+    authors: ["PyTorch contributors"]
+    url: "https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html"
+    topics: [pytorch, prerequisites]
+    status: unread
+    local_path: null
+    notes: "PyTorch 官方入门。"
+
+  - id: threeblueonebrown-linear-algebra
+    title: "Essence of Linear Algebra"
+    type: course
+    authors: ["3Blue1Brown"]
+    url: "https://www.3blue1brown.com/topics/linear-algebra"
+    topics: [mathematics, linear-algebra, prerequisites]
+    status: unread
+    local_path: null
+    notes: "线性代数直觉。"
+
+  - id: build-gpt-from-scratch
+    title: "Let's build GPT: from scratch, in code, spelled out"
+    type: video
+    authors: ["Andrej Karpathy"]
+    url: "https://www.youtube.com/watch?v=kCc8FmEb1nY"
+    topics: [transformer, pytorch, prerequisites]
+    status: unread
+    local_path: null
+    notes: "从零实现 GPT。"
+
+  - id: nccl-user-guide
+    title: "NVIDIA NCCL Documentation"
+    type: official-doc
+    authors: ["NVIDIA"]
+    url: "https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/"
+    topics: [nccl, collectives, distributed-training]
+    status: unread
+    local_path: null
+    notes: "集合通信官方文档。"
+
+  - id: nvidia-deep-learning-performance-guide
+    title: "NVIDIA Deep Learning Performance Guide"
+    type: official-doc
+    authors: ["NVIDIA"]
+    url: "https://docs.nvidia.com/deeplearning/performance/"
+    topics: [gpu, performance, prerequisites]
+    status: unread
+    local_path: null
+    notes: "GPU 深度学习性能基础。"
+
+  - id: cuda-programming-guide
+    title: "CUDA C++ Programming Guide"
+    type: official-doc
+    authors: ["NVIDIA"]
+    url: "https://docs.nvidia.com/cuda/cuda-c-programming-guide/"
+    topics: [cuda, gpu, operators]
+    status: unread
+    local_path: null
+    notes: "CUDA 编程模型权威资料。"
+
+  - id: cuda-operator-interview
+    title: "CUDA 手撕算子 · 面试练习"
+    type: tutorial
+    authors: ["kkcocoa"]
+    url: "https://kkcocoa.github.io/cuda-operator-interview/"
+    topics: [cuda, operators, practice, interview]
+    status: unread
+    local_path: null
+    notes: "网站推荐的 CUDA 算子面试练习；待核对正文后映射到阶段题库。"
+
+  - id: online-softmax
+    title: "Online normalizer calculation for softmax"
+    type: paper
+    authors: ["Maxim Milakov", "Natalia Gimelshein"]
+    url: "https://arxiv.org/abs/1805.02867"
+    topics: [softmax, online-algorithm, cuda]
+    status: unread
+    local_path: null
+    notes: "Online Softmax 基础。"
+
+  - id: flashattention-v1
+    title: "FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness"
+    type: paper
+    authors: ["Tri Dao", "Daniel Y. Fu", "Stefano Ermon", "Atri Rudra", "Christopher Ré"]
+    url: "https://arxiv.org/abs/2205.14135"
+    topics: [attention, cuda, io-awareness]
+    status: unread
+    local_path: null
+    notes: "FlashAttention V1。"
+
+  - id: flashattention-v2
+    title: "FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning"
+    type: paper
+    authors: ["Tri Dao"]
+    url: "https://arxiv.org/abs/2307.08691"
+    topics: [attention, cuda, parallelism]
+    status: unread
+    local_path: null
+    notes: "FlashAttention V2。"
+
+  - id: flashattention-v3
+    title: "FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision"
+    type: paper
+    authors: ["Jay Shah", "Ganesh Bikshandi", "Ying Zhang", "Vijay Thakkar", "Pradeep Ramani", "Tri Dao"]
+    url: "https://arxiv.org/abs/2407.08608"
+    topics: [attention, cuda, hopper, fp8]
+    status: unread
+    local_path: null
+    notes: "Hopper 上的异步与低精度 Attention；已按 arXiv 页面校正链接。"
+
+  - id: flash-decoding
+    title: "Flash-Decoding for long-context inference"
+    type: article
+    authors: ["Stanford CRFM"]
+    url: "https://crfm.stanford.edu/2023/10/12/flashdecoding.html"
+    topics: [attention, inference, decoding]
+    status: unread
+    local_path: null
+    notes: "长上下文 Decode 优化。"
+
+  - id: flashinfer-paper
+    title: "FlashInfer: Efficient and Customizable Attention Engine for LLM Inference Serving"
+    type: paper
+    authors: ["FlashInfer contributors"]
+    url: "https://arxiv.org/abs/2501.01005"
+    topics: [attention, inference, serving]
+    status: unread
+    local_path: null
+    notes: "FlashInfer 论文。"
+
+  - id: flashinfer-repository
+    title: "FlashInfer"
+    type: repository
+    authors: ["FlashInfer contributors"]
+    url: "https://github.com/flashinfer-ai/flashinfer"
+    topics: [attention, inference, serving]
+    status: unread
+    local_path: null
+    notes: "官方代码仓库。"
+
+  - id: triton-tutorials
+    title: "Triton Tutorials"
+    type: official-doc
+    authors: ["Triton contributors"]
+    url: "https://triton-lang.org/main/getting-started/tutorials/"
+    topics: [triton, operators, compiler]
+    status: unread
+    local_path: null
+    notes: "Triton 官方教程。"
+
+  - id: nsight-systems-user-guide
+    title: "Nsight Systems User Guide"
+    type: official-doc
+    authors: ["NVIDIA"]
+    url: "https://docs.nvidia.com/nsight-systems/UserGuide/"
+    topics: [profiling, performance, cuda]
+    status: unread
+    local_path: null
+    notes: "系统时间线分析。"
+
+  - id: nsight-compute-profiling-guide
+    title: "Nsight Compute Profiling Guide"
+    type: official-doc
+    authors: ["NVIDIA"]
+    url: "https://docs.nvidia.com/nsight-compute/ProfilingGuide/"
+    topics: [profiling, kernel, cuda]
+    status: unread
+    local_path: null
+    notes: "Kernel 级性能分析。"
+
+  - id: deepseek-v2
+    title: "DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model"
+    type: paper
+    authors: ["DeepSeek-AI"]
+    url: "https://arxiv.org/abs/2405.04434"
+    topics: [mla, moe, distributed-training]
+    status: unread
+    local_path: null
+    notes: "MLA 与 MoE 架构参考。"
+
+  - id: deepseek-moe
+    title: "DeepSeekMoE: Towards Ultimate Expert Specialization in Mixture-of-Experts Language Models"
+    type: paper
+    authors: ["DeepSeek-AI"]
+    url: "https://arxiv.org/abs/2401.06066"
+    topics: [moe, expert-parallelism, distributed-training]
+    status: unread
+    local_path: null
+    notes: "MoE 参考。"
+
+  - id: megatron-lm-paper
+    title: "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism"
+    type: paper
+    authors: ["Mohammad Shoeybi", "Mostofa Patwary", "Raul Puri", "Patrick LeGresley", "Jared Casper", "Bryan Catanzaro"]
+    url: "https://arxiv.org/abs/1909.08053"
+    topics: [tensor-parallelism, distributed-training]
+    status: unread
+    local_path: null
+    notes: "Tensor Parallelism 代表论文。"
+
+  - id: zero-paper
+    title: "ZeRO: Memory Optimizations Toward Training Trillion Parameter Models"
+    type: paper
+    authors: ["Samyam Rajbhandari", "Jeff Rasley", "Olatunji Ruwase", "Yuxiong He"]
+    url: "https://arxiv.org/abs/1910.02054"
+    topics: [zero, memory, distributed-training]
+    status: unread
+    local_path: null
+    notes: "ZeRO 论文。"
+
+  - id: deepspeed-docs
+    title: "DeepSpeed Documentation"
+    type: official-doc
+    authors: ["Microsoft"]
+    url: "https://www.deepspeed.ai/"
+    topics: [deepspeed, zero, distributed-training]
+    status: unread
+    local_path: null
+    notes: "DeepSpeed 官方文档。"
+
+  - id: pytorch-ddp-tutorial
+    title: "Distributed Data Parallel in PyTorch"
+    type: official-doc
+    authors: ["PyTorch contributors"]
+    url: "https://pytorch.org/tutorials/intermediate/ddp_tutorial.html"
+    topics: [ddp, pytorch, distributed-training]
+    status: unread
+    local_path: null
+    notes: "PyTorch DDP 官方教程。"
+
+  - id: pytorch-fsdp-tutorial
+    title: "Getting Started with Fully Sharded Data Parallel"
+    type: official-doc
+    authors: ["PyTorch contributors"]
+    url: "https://pytorch.org/tutorials/intermediate/FSDP_tutorial.html"
+    topics: [fsdp, pytorch, distributed-training]
+    status: unread
+    local_path: null
+    notes: "PyTorch FSDP 官方教程。"
+
+  - id: efficient-generative-llm-serving-survey
+    title: "Towards Efficient Generative Large Language Model Serving: A Survey from Algorithms to Systems"
+    type: paper
+    authors: ["Survey authors"]
+    url: "https://arxiv.org/abs/2312.15234"
+    topics: [inference, serving, survey]
+    status: unread
+    local_path: null
+    notes: "生成式 LLM serving 综述。"
+
+  - id: vllm-paper
+    title: "Efficient Memory Management for Large Language Model Serving with PagedAttention"
+    type: paper
+    authors: ["Woosuk Kwon", "Zhuohan Li", "Siyuan Zhuang", "Ying Sheng", "Lianmin Zheng", "Cody Hao Yu", "Joseph E. Gonzalez", "Hao Zhang", "Ion Stoica"]
+    url: "https://arxiv.org/abs/2309.06180"
+    topics: [vllm, paged-attention, inference]
+    status: unread
+    local_path: null
+    notes: "vLLM/PagedAttention 论文。"
+
+  - id: vllm-repository
+    title: "vLLM"
+    type: repository
+    authors: ["vLLM contributors"]
+    url: "https://github.com/vllm-project/vllm"
+    topics: [vllm, inference, serving]
+    status: unread
+    local_path: null
+    notes: "官方代码仓库。"
+
+  - id: vllm-docs
+    title: "vLLM Documentation"
+    type: official-doc
+    authors: ["vLLM contributors"]
+    url: "https://docs.vllm.ai/"
+    topics: [vllm, inference, serving]
+    status: unread
+    local_path: null
+    notes: "官方文档。"
+
+  - id: sglang-paper
+    title: "SGLang: Efficient Execution of Structured Language Model Programs"
+    type: paper
+    authors: ["SGLang contributors"]
+    url: "https://arxiv.org/abs/2312.07104"
+    topics: [sglang, radix-attention, inference]
+    status: unread
+    local_path: null
+    notes: "SGLang 论文。"
+
+  - id: sglang-repository
+    title: "SGLang"
+    type: repository
+    authors: ["SGLang contributors"]
+    url: "https://github.com/sgl-project/sglang"
+    topics: [sglang, inference, serving]
+    status: unread
+    local_path: null
+    notes: "官方代码仓库。"
+
+  - id: tensorrt-llm-docs
+    title: "TensorRT-LLM Documentation"
+    type: official-doc
+    authors: ["NVIDIA"]
+    url: "https://nvidia.github.io/TensorRT-LLM/"
+    topics: [tensorrt-llm, inference, serving]
+    status: unread
+    local_path: null
+    notes: "TensorRT-LLM 官方文档。"
+
+  - id: orca-paper
+    title: "Orca: A Distributed Serving System for Transformer-Based Generative Models"
+    type: paper
+    authors: ["Gyeong-In Yu", "Joo Seong Jeong", "Geon-Woo Kim", "Soo-Myoung Kim", "Byung-Gon Chun"]
+    url: "https://www.usenix.org/conference/osdi22/presentation/yu"
+    topics: [continuous-batching, inference, serving]
+    status: unread
+    local_path: null
+    notes: "迭代级调度与 continuous batching 基础。"
+
+  - id: smoothquant
+    title: "SmoothQuant: Accurate and Efficient Post-Training Quantization for Large Language Models"
+    type: paper
+    authors: ["Guangxuan Xiao", "Ji Lin", "Mickael Seznec", "Hao Wu", "Julien Demouth", "Song Han"]
+    url: "https://arxiv.org/abs/2211.10438"
+    topics: [quantization, w8a8, inference]
+    status: unread
+    local_path: null
+    notes: "W8A8 量化。"
+
+  - id: gptq
+    title: "GPTQ: Accurate Post-Training Quantization for Generative Pre-trained Transformers"
+    type: paper
+    authors: ["Elias Frantar", "Saleh Ashkboos", "Torsten Hoefler", "Dan Alistarh"]
+    url: "https://arxiv.org/abs/2210.17323"
+    topics: [quantization, int4, inference]
+    status: unread
+    local_path: null
+    notes: "Weight-only PTQ。"
+
+  - id: awq
+    title: "AWQ: Activation-aware Weight Quantization for LLM Compression and Acceleration"
+    type: paper
+    authors: ["Ji Lin", "Jiaming Tang", "Haotian Tang", "Shang Yang", "Xingyu Dang", "Song Han"]
+    url: "https://arxiv.org/abs/2306.00978"
+    topics: [quantization, int4, inference]
+    status: unread
+    local_path: null
+    notes: "Activation-aware weight-only 量化。"
+
+  - id: kivi
+    title: "KIVI: A Tuning-Free Asymmetric 2bit Quantization for KV Cache"
+    type: paper
+    authors: ["KIVI authors"]
+    url: "https://arxiv.org/abs/2402.02750"
+    topics: [quantization, kv-cache, inference]
+    status: unread
+    local_path: null
+    notes: "KV Cache 量化。"
+
+  - id: speculative-sampling
+    title: "Fast Inference from Transformers via Speculative Decoding"
+    type: paper
+    authors: ["Yaniv Leviathan", "Matan Kalman", "Yossi Matias"]
+    url: "https://arxiv.org/abs/2302.01318"
+    topics: [speculative-decoding, inference]
+    status: unread
+    local_path: null
+    notes: "Speculative sampling 基础。"
+
+  - id: medusa
+    title: "Medusa: Simple LLM Inference Acceleration Framework with Multiple Decoding Heads"
+    type: paper
+    authors: ["Medusa authors"]
+    url: "https://arxiv.org/abs/2401.10774"
+    topics: [speculative-decoding, inference]
+    status: unread
+    local_path: null
+    notes: "多 decoding heads。"
+
+  - id: eagle-2
+    title: "EAGLE-2: Faster Inference of Language Models with Dynamic Draft Trees"
+    type: paper
+    authors: ["EAGLE-2 authors"]
+    url: "https://arxiv.org/abs/2406.16858"
+    topics: [speculative-decoding, inference]
+    status: unread
+    local_path: null
+    notes: "Dynamic draft tree。"
+
+  - id: distserve
+    title: "DistServe: Disaggregating Prefill and Decoding for Goodput-optimized Large Language Model Serving"
+    type: paper
+    authors: ["DistServe authors"]
+    url: "https://arxiv.org/abs/2401.09670"
+    topics: [pd-disaggregation, goodput, inference]
+    status: unread
+    local_path: null
+    notes: "Prefill/Decode 解耦。"
+
+  - id: splitwise
+    title: "Splitwise: Efficient Generative LLM Inference Using Phase Splitting"
+    type: paper
+    authors: ["Splitwise authors"]
+    url: "https://arxiv.org/abs/2311.18677"
+    topics: [pd-disaggregation, inference]
+    status: unread
+    local_path: null
+    notes: "推理阶段拆分。"
+
+  - id: mlperf-inference
+    title: "MLPerf Inference"
+    type: benchmark
+    authors: ["MLCommons"]
+    url: "https://mlcommons.org/benchmarks/inference-datacenter/"
+    topics: [benchmark, inference]
+    status: unread
+    local_path: null
+    notes: "数据中心推理 Benchmark。"
+
+  - id: genai-perf
+    title: "GenAI-Perf"
+    type: official-doc
+    authors: ["NVIDIA"]
+    url: "https://docs.nvidia.com/deeplearning/triton-inference-server/user-guide/docs/client/src/c%2B%2B/perf_analyzer/genai-perf/"
+    topics: [benchmark, inference, serving]
+    status: unread
+    local_path: null
+    notes: "生成式模型服务压测工具。"
+
+  - id: ai-infra-guide-repository
+    title: "AIInfraGuide"
+    type: repository
+    authors: ["AIInfraGuide contributors"]
+    url: "https://github.com/caomaolufei/AIInfraGuide"
+    topics: [roadmap, ai-infra, interview-guide]
+    status: reading
+    local_path: null
+    notes: "参考网站官方代码仓库；正在用于核对面试宝典、公司面经、面试题与手撕题对应源文件。"
+
+  - id: deepspeed-repository
+    title: "DeepSpeed"
+    type: repository
+    authors: ["Microsoft"]
+    url: "https://github.com/microsoft/DeepSpeed"
+    topics: [deepspeed, distributed-training]
+    status: unread
+    local_path: null
+    notes: "官方代码仓库。"
+
+  - id: megatron-lm-repository
+    title: "Megatron-LM"
+    type: repository
+    authors: ["NVIDIA"]
+    url: "https://github.com/NVIDIA/Megatron-LM"
+    topics: [megatron, distributed-training]
+    status: unread
+    local_path: null
+    notes: "官方代码仓库。"
+
+  - id: flashattention-repository
+    title: "FlashAttention"
+    type: repository
+    authors: ["Dao-AILab"]
+    url: "https://github.com/Dao-AILab/flash-attention"
+    topics: [flashattention, cuda, operators]
+    status: unread
+    local_path: null
+    notes: "官方代码仓库。"
+
+  - id: tensorrt-llm-repository
+    title: "TensorRT-LLM"
+    type: repository
+    authors: ["NVIDIA"]
+    url: "https://github.com/NVIDIA/TensorRT-LLM"
+    topics: [tensorrt-llm, inference]
+    status: unread
+    local_path: null
+    notes: "官方代码仓库。"
+
+  - id: triton-repository
+    title: "Triton"
+    type: repository
+    authors: ["Triton contributors"]
+    url: "https://github.com/triton-lang/triton"
+    topics: [triton, compiler, operators]
+    status: unread
+    local_path: null
+    notes: "官方代码仓库。"
