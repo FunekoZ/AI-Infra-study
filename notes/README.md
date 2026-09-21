@@ -2,6 +2,8 @@
 
 知识笔记按学习阶段组织，每个主题使用一个小写英文连字符命名的 Markdown 文件。与主题配套的代码放入 `examples/<stage>/`，真实面试题、回答骨架和追问放入 `interview/<stage>/`；三者相互链接，但不重复堆放相同内容。
 
+跨主题的已解决问题和较难知识点，统一索引在 [review-index.md](review-index.md)，方便长期复盘并回到原网站定位。
+
 ## 目录
 
 - `00-prerequisites/`：编程、Linux、数学、Transformer、PyTorch、GPU 与集合通信。
