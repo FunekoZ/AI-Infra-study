@@ -1,6 +1,6 @@
 # AI Infra 面试需求轴
 
-本目录整理 [AIInfraGuide 面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/) 中的公司面经、综合题库和面试问题，并将它们映射到四阶段知识主线。首页当前显示 181 篇面经、65 家公司和 7 个梯队；这是网站收录统计，不直接等同于行业频率。
+本目录以 [AIInfraGuide 官方仓库](https://github.com/caomaolufei/AIInfraGuide)的 `docs/interview/*.md` 为主要读取入口，整理其中的公司面经、综合题库和面试问题，并将它们映射到四阶段知识主线；[部署后的面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)只用于公开 URL 与渲染结果核对。当前固定源码版本统计为 181 篇面经、65 家公司/分组和 7 个梯队；这是网站收录统计，不直接等同于行业频率。
 
 它不是独立背题库：
 
@@ -11,8 +11,8 @@
 
 ## 目录
 
-- `source-index.md`：网站面试内容的来源索引、页面元数据、综合题库主题和核查状态。
-- `core-question-map.md`：从已核对正文中提取、去重并映射到四阶段的核心题卡索引（按需创建）。
+- `source-index.md`：固定源码版本、来源索引、页面元数据、综合题库主题和核查状态。
+- `core-question-map.md`：从 10 篇综合面经固定正文中提取、语义去重并映射到四阶段的第一版具体题卡索引。
 - `00-prerequisites/`：编程、数学、Transformer、PyTorch、GPU 与集合通信。
 - `01-cuda-operators/`：CUDA、GPU 架构、算子手撕、Triton 和性能分析。
 - `02-distributed-training/`：显存账本、并行策略、精度、MoE 和训练系统。

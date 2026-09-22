@@ -56,6 +56,9 @@ mlruns/
 *.sqlite
 *.trace.json
 
+# Local upstream repositories and generated source caches
+.cache/
+
 # Downloaded resources are opt-in: metadata is tracked, binary documents are ignored by default.
 resources/papers/*
 !resources/papers/.gitkeep

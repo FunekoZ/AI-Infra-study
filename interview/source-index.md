@@ -1,12 +1,14 @@
 # 面试材料来源索引
 
-> 主入口：[AIInfraGuide 面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)
+> 主要读取入口：[AIInfraGuide 官方仓库](https://github.com/caomaolufei/AIInfraGuide)的 `docs/interview/*.md`
 >
-> 首页目录和官方仓库结构已于 2026-09-21 核对；10 篇综合面经的正文主题已核对，其他公司叶子面经仍在逐篇整理。目录标题能证明页面存在，不能替代正文核查。
+> 公开入口：[AIInfraGuide 面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)
+>
+> 当前固定版本：`main@a3b63eeb81d6d36a3c42c8cfc5a1bdd96e36bab1`，核对日期 2026-09-22。详细源文件、统计口径和内容指纹见 [AIInfraGuide 上游来源快照](../resources/ai-infra-guide-source.md)。10 篇综合面经已拆成第一版题卡；其他公司叶子面经继续按主题增量整理。目录标题只能证明页面存在，具体题目必须回到固定版本正文。
 
-## 首页定位与规模
+## 收录规模
 
-面试宝典首页将自己定位为 AI Infra 面试真题集锦，并显示：
+对固定 commit 的 `docs/interview/*.md` frontmatter 直接统计：
 
 - **181 篇面经**；
 - **65 家公司**；
@@ -18,12 +20,12 @@
 
 | 标题 | 类型 | URL | 核查状态 | 说明 |
 |---|---|---|---|---|
-| AIInfraGuide 面试宝典 | 面试总目录 | https://caomaolufei.github.io/AIInfraGuide/interview/ | 首页已核对 | 181 篇面经、65 家公司、7 个梯队。 |
-| AI Infra 学习路线 | 知识路线 | https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/ | 已核对 | 四阶段知识主线、推荐资料和实践能力要求。 |
-| AIInfraGuide 官方仓库 | 仓库 | https://github.com/caomaolufei/AIInfraGuide | 结构已核对 | 面经原文位于 `docs/interview/`，当前公开仓库含 181 个 Markdown 文件；collection schema 位于 `src/content/config.ts`。 |
+| AIInfraGuide 面试宝典 | 面试总目录 | https://caomaolufei.github.io/AIInfraGuide/interview/ | 部署抽样已核对 | 公开 URL、导航和渲染结果核对入口；不作为批量正文读取入口。 |
+| AI Infra 学习路线 | 知识路线 | https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/ | 源码与部署已核对 | 四阶段知识主线、推荐资料和实践能力要求；源文件为 `docs/guides/AI Infra学习路线.md`。 |
+| AIInfraGuide 官方仓库 | 仓库 | https://github.com/caomaolufei/AIInfraGuide | 固定 commit 已核对 | 当前主要读取入口；版本、路径、统计和内容指纹见 `resources/ai-infra-guide-source.md`。 |
 | CUDA 手撕算子 · 面试练习 | 外部专题练习 | https://kkcocoa.github.io/cuda-operator-interview/ | 入口已确认 | 学习路线推荐的 CUDA 面试练习，不是面试宝典首页的独立栏目。 |
 
-## 首页目录结构
+## 源码目录对应的部署分组
 
 | 梯队 | 篇数 | 公司/分组数 | 首页描述 | 学习映射倾向 |
 |---|---:|---:|---|---|
@@ -114,17 +116,18 @@
 | 综合题库 (7) | 训练/推理加速、分布式框架、DeepSpeed、资源与时间估算、慢训练排查、通信、梯度累积、量化、loss 抖动 | 阶段 2/3 |
 | AI Infra 面经 (1) | C++、HPC、GPU/Cache/访存、OpenCL、fusion/TVM、深度学习/量化、Conv、计算图、Pooling/NMS | 阶段 0/1/3 |
 
-综合页面的上述主题已由正文或官方仓库源文件核对，但仍需进一步拆成去重后的具体题卡。
+综合页面的上述主题和第一版具体题卡均由固定 commit 的正文核对；去重结果见 [core-question-map.md](core-question-map.md)。后续只需在上游对应 blob SHA 变化时重拆这些页面。
 
 ## 官方仓库结构与数据口径
 
+- 固定版本、主要源文件、统计复核和内容指纹：[AIInfraGuide 上游来源快照](../resources/ai-infra-guide-source.md)
 - 面经原文：https://github.com/caomaolufei/AIInfraGuide/tree/main/docs/interview
 - 面试 collection schema：https://github.com/caomaolufei/AIInfraGuide/blob/main/src/content/config.ts
 - 首页源码：https://github.com/caomaolufei/AIInfraGuide/blob/main/src/pages/interview/index.astro
 - 动态文章路由：https://github.com/caomaolufei/AIInfraGuide/blob/main/src/pages/interview/%5B...slug%5D.astro
 - 分组逻辑：https://github.com/caomaolufei/AIInfraGuide/blob/main/src/utils/companyGrouping.ts
 
-仓库当前有 181 个 `docs/interview/*.md` 文件，与首页实时计数一致。
+固定 commit 中有 181 个 `docs/interview/*.md` 文件；该数量与核对时部署页面统计一致。
 
 ### 元数据分布
 
@@ -150,22 +153,27 @@
 
 ## 当前可确认与不可确认的边界
 
-首页可以确认：
+固定源码版本可以确认：
 
-- 梯队、公司/机构、篇数和叶子页面链接；
-- 部分条目属于实习、校招、社招及具体面试轮次；
-- 七篇综合面经题库的存在；
-- 各梯队的首页定位描述。
+- 梯队、公司/机构、篇数、frontmatter 元数据和叶子页面 slug；
+- 综合 10 篇中的 185 条编号原题，以及 [第一版语义去重映射](core-question-map.md)；
+- 部分条目声明的实习、校招、社招及面试轮次；
+- 页面生成时对 `draft` 的过滤与梯队/公司的分组顺序。
 
-首页不能确认：
+部署网站抽样可以确认：
 
-- 各公司叶子面经正文中的完整具体题目（综合 10 篇主题已核对）；
-- 某题的真实行业出现频率；
-- 是否包含手撕代码，以及具体要求；
-- 候选岗位的完整 JD、面试年份和技术栈；
+- 学习路线、面试首页和代表性叶子页面的公开 URL 可访问；
+- 核对时页面显示 181 篇面经、65 家公司、7 个梯队；
+- 标题、slug、导航和 Markdown 渲染与固定源码样本一致。
+
+当前仍不能确认：
+
+- 尚未逐篇读取的公司叶子面经中的完整题目映射；
+- 某题的真实行业出现频率或公司长期招聘标准；
+- 来源没有明确写出的完整 JD、真实面试日期和上下文；
 - 面经叙述中的技术结论是否准确。
 
-因此，下一步应把已核对的综合面经拆成具体题卡，再读取目标公司叶子页面，才能形成去重后的题目库和更可靠的阶段权重。
+因此，初始化索引已完成；后续不再横向扫完整站，而是在进入每个主题前，按关键词读取对应公司叶子正文并增量合并到已有题簇。
 
 ## 逐篇核对字段
 

@@ -6,26 +6,26 @@
 
 ## 当前学习状态
 
-- **最后更新**：2026-09-21
-- **路线依据**：[AIInfraGuide 学习路线](https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/) + [AIInfraGuide 面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)
-- **路线最近核对**：2026-09-21（知识路线页面标注版本日期：2026-03-26；面试宝典首页已确认）
+- **最后更新**：2026-09-22
+- **路线依据**：[AIInfraGuide 官方仓库](https://github.com/caomaolufei/AIInfraGuide)源码为主要读取入口；[学习路线](https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/)与[面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)用于部署一致性核对
+- **路线最近核对**：2026-09-22（固定版本 `main@a3b63eeb81d6d36a3c42c8cfc5a1bdd96e36bab1`；路线 frontmatter `pubDate`：2026-03-26；公开入口与代表性页面已抽样核对）
 - **学习模式**：对话驱动、理解优先；可创建带充分注释的教学代码，但默认不要求实际运行
 - **当前阶段**：第零层——前置知识
 - **当前模块**：Transformer 基础
 - **当前主题**：Decoder-only Transformer 整体数据流与 Self-Attention
 - **当前状态**：未开始
-- **当前目标**：建立后续 CUDA、分布式训练和推理优化共同依赖的 Transformer 计算与数据流基础，并能回答网站面试材料中对应的代表性问题。
+- **当前目标**：建立后续 CUDA、分布式训练和推理优化共同依赖的 Transformer 计算与数据流基础，并能回答 AIInfraGuide 面试材料中对应的代表性问题。
 - **当前知识验收**：尚未开始 Decoder Block、Q/K/V shape、Attention 数据流与复杂度推导。
-- **当前面试验收**：面试宝典首页和官方仓库结构已确认，覆盖 181 篇面经、65 家公司和 7 个梯队；10 篇综合面经的正文主题已核对，当前仍需拆解具体题卡并确定 Transformer 代表题。
+- **当前面试验收**：已从固定源码版本的 10 篇综合面经中提取并语义去重第一版题簇，确定当前主题主问 `CQ-0-ATTN-IMPL`（MHA 实现）、GQA 递进，以及 Decoder-only、shape、mask、scale 四条叶子题补充；状态均为 `unseen`，尚未开始作答验收。
 - **已掌握内容与证据**：尚无具体技术主题通过知识与面试双重验收；仓库学习协议、双轴路线和面试目录已建立。
 - **长期复盘记录**：`notes/review-index.md` 已建立，当前无具体条目；后续只记录真实解决的问题和较难掌握的知识点。
-- **未解决问题**：尚未系统梳理 Decoder Block、Q/K/V shape、Attention 复杂度及其与 AI Infra 瓶颈的关系；面试宝典叶子正文尚未完成去重和四阶段题目映射。
+- **未解决问题**：尚未系统梳理 Decoder Block、Q/K/V shape、Attention 复杂度及其与 AI Infra 瓶颈的关系；公司叶子面经改为随主题增量读取，不再阻塞开始学习。
 - **活动临时分支**：无
 - **主线回归点**：第零层 → Transformer 基础 → Decoder-only Transformer 数据流
 - **分支退出条件**：无活动分支
-- **唯一下一步**：把已核对的 10 篇综合面经拆成第一版具体题卡，优先确定与 Transformer、MHA/GQA 和 Attention shape 直接相关的核心题。
-- **完成标准**：形成带来源的具体题目清单；每题标注主阶段、桥接阶段、题型与核查状态；去除语义重复；确定当前 Transformer 主题的核心题和至少一个递进追问。
-- **关联笔记、代码、面试与资料**：`notes/00-prerequisites/`、`examples/00-prerequisites/`、`interview/`、`resources/resources.yaml`
+- **唯一下一步**：开始 M1 第一项：理解并口述 Decoder-only Transformer 从 token embedding 经过 Pre-Norm、Masked Self-Attention、residual、FFN 到输出 hidden states 的整体数据流，同时标注每一步 `(B, S, D)` shape。
+- **完成标准**：不看资料画出或口述一个 Decoder Block；说明两条 residual 路径、normalization 位置、Attention 与 FFN 的输入输出；能回答 `CQ-0-TRANSFORMER-FLOW` 的主问题，暂不要求本轮完成 Q/K/V 拆头细节。
+- **关联笔记、代码、面试与资料**：`notes/00-prerequisites/`、`examples/00-prerequisites/`、`interview/core-question-map.md`、`interview/source-index.md`、`resources/ai-infra-guide-source.md`、`resources/resources.yaml`
 
 ## 当前概览
 
@@ -49,9 +49,11 @@
 - [x] 建立已解决问题与难点知识的长期复盘索引及原网站定位字段。
 - [x] 系统核对网站面试宝典首页、梯队、公司与综合题库入口。
 - [x] 读取 10 篇综合面经正文并核对主题范围。
-- [ ] 将综合面经拆解为去重后的具体题卡。
-- [ ] 读取代表性公司叶子面经正文并提取具体题目。
-- [ ] 将已核实题目去重后映射到四阶段题库。
+- [x] 采用 GitHub source-first，记录固定 commit、源文件、内容指纹与部署抽样核对规则。
+- [x] 将综合面经拆解为去重后的第一版具体题卡。
+- [x] 读取当前 Transformer 主题所需的代表性公司叶子面经正文并提取具体题目。
+- [x] 将已核实综合题目去重后映射到四阶段与横向能力轴。
+- [ ] 随每个主题增量读取对应公司叶子面经，并合并到已有题簇。
 
 ### M1：Transformer 计算基础
 
@@ -66,6 +68,15 @@
 ## 学习日志
 
 按时间倒序记录。结论需标注为“资料结论”“原文推导”“面经样本”或“个人解释”。
+
+### 2026-09-22：完成正式学习前的外部基准与题卡初始化
+
+- **类型**：学习基础设施优化，不代表技术主题已掌握。
+- **完成**：将 AIInfraGuide 调整为 GitHub 源码优先、部署网站抽样核对、技术事实回到一级来源；固定 `main@a3b63eeb81d6d36a3c42c8cfc5a1bdd96e36bab1`，建立忽略提交的 `.cache/AIInfraGuide/`、来源快照、统计复核和 10 篇综合面经 blob 指纹。
+- **面经样本**：从 10 篇综合面经的 185 条编号原题建立第一版语义去重题簇并映射到四阶段与横向能力轴；读取当前 Transformer 主题需要的代表性叶子题，区分“路线知识验收”和“真实面经原题”。
+- **部署核对**：学习路线、面试首页与代表性叶子页面返回 HTTP 200；首页显示 181 篇面经、65 家公司、7 个梯队，与固定源码统计一致。
+- **进度变化**：M0 初始化完成到足以开始学习；Transformer 技术状态仍为 `未开始`，没有新增 `已掌握` 内容，也不创建复盘条目。
+- **下一步**：开始 Decoder-only Transformer Block 整体数据流与 `(B, S, D)` shape。
 
 ### 2026-09-21：增加长期复盘记录规则
 

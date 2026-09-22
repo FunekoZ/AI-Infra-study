@@ -10,10 +10,16 @@ resources:
     authors:
       - "AIInfraGuide contributors"
     url: "https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/"
+    repository_url: "https://github.com/caomaolufei/AIInfraGuide"
+    source_path: "docs/guides/AI Infra学习路线.md"
+    source_ref: "main@a3b63eeb81d6d36a3c42c8cfc5a1bdd96e36bab1"
+    verified_at: "2026-09-22"
     topics: [roadmap, ai-infra, interview-guide]
-    status: reading
-    local_path: null
-    notes: "本仓库主路线及面试需求来源；页面标注日期为 2026-03-26。已完成学习路线核对，面试宝典/面经内容正在专项索引。"
+    status: read
+    local_path: "resources/ai-infra-guide-source.md"
+    source_tier: community
+    verification: cross-checked
+    notes: "路线内容改为从官方仓库固定 commit 的 Markdown 源文件读取，公开页面只做部署一致性核对；frontmatter pubDate 为 2026-03-26。AIInfraGuide 是路线与面经样本的一手发布源，但不是 Transformer/CUDA 等底层技术事实的 primary source。四阶段范围、顺序、推荐资料和检验标准已同步到本地路线。"
 
   - id: ai-infra-interview-guide
     title: "AIInfraGuide 面试宝典"
@@ -21,12 +27,16 @@ resources:
     authors:
       - "AIInfraGuide contributors"
     url: "https://caomaolufei.github.io/AIInfraGuide/interview/"
+    repository_url: "https://github.com/caomaolufei/AIInfraGuide"
+    source_path: "docs/interview/*.md"
+    source_ref: "main@a3b63eeb81d6d36a3c42c8cfc5a1bdd96e36bab1"
+    verified_at: "2026-09-22"
     topics: [interview, interview-experience, ai-infra, roadmap]
-    status: reading
-    local_path: null
+    status: read
+    local_path: "resources/ai-infra-guide-source.md"
     source_tier: community
     verification: cross-checked
-    notes: "真实需求轴主入口；2026-09-21 核对首页和官方仓库，页面显示 181 篇面经、65 家公司、7 个梯队，docs/interview/ 有 181 个 Markdown。10 篇综合面经主题已核对，页面统计不代表行业总体频率。"
+    notes: "真实需求轴主入口，也是所收录面经样本的一手发布源，但不是题目所涉底层技术事实的 primary source。固定源码版本含 181 篇面经、65 家公司/分组和 7 个梯队；10 篇综合面经已建立内容指纹并用于第一版题卡映射。页面统计只描述网站收录样本，不代表行业总体频率。"
 
   - id: attention-is-all-you-need
     title: "Attention Is All You Need"
@@ -483,10 +493,14 @@ resources:
     type: repository
     authors: ["AIInfraGuide contributors"]
     url: "https://github.com/caomaolufei/AIInfraGuide"
+    source_ref: "main@a3b63eeb81d6d36a3c42c8cfc5a1bdd96e36bab1"
+    verified_at: "2026-09-22"
     topics: [roadmap, ai-infra, interview-guide]
-    status: reading
-    local_path: null
-    notes: "参考网站官方代码仓库；正在用于核对面试宝典、公司面经、面试题与手撕题对应源文件。"
+    status: reviewed
+    local_path: "resources/ai-infra-guide-source.md"
+    source_tier: community
+    verification: cross-checked
+    notes: "外部学习基准的主要读取入口；已核对路线 Markdown、181 个面经 Markdown、content schema、文章路由和公司分组逻辑。技术事实仍需由对应论文、标准、官方文档或官方项目核查。临时 clone 约定放入 .cache/AIInfraGuide/，不提交 Git。"
 
   - id: deepspeed-repository
     title: "DeepSpeed"

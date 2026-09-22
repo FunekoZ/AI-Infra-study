@@ -2,8 +2,12 @@
 
 资料元数据统一登记在 [resources.yaml](resources.yaml)。
 
+- [ai-infra-guide-source.md](ai-infra-guide-source.md)：AIInfraGuide 固定 commit、主要源文件、统计复核、内容指纹和重新同步流程。
+
 - `papers/`：来源可信且允许保存的论文原文。
 - `docs/`：来源可信且允许本地保存的官方文档、课程材料或网络文章。
+
+AIInfraGuide 等持续更新的外部代码仓库默认浅克隆到 `.cache/<repository>/`，该目录不提交 Git；本仓库只保存来源 URL、分支、commit SHA、核对日期和提炼后的结构化索引。这样既能批量检索 Markdown/frontmatter，也避免复制整站内容或让上游历史污染学习仓库。
 
 默认只登记链接；需要逐节精读、核对公式或多轮反复引用时再下载。下载后填写 `local_path`，并保持原始文件不被修改。模型权重、数据集和大型构建产物不放入此目录，也不提交 Git。
 

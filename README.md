@@ -1,12 +1,24 @@
 # AI Infra Study
 
-个人 AI Infra **对话式、理解导向的系统学习仓库**。知识主线参考 [AIInfraGuide 学习路线](https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/)，真实需求轴参考 [AIInfraGuide 面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)。
+个人 AI Infra **对话式、理解导向的系统学习仓库**。知识主线与真实需求轴都以 [AIInfraGuide 官方仓库](https://github.com/caomaolufei/AIInfraGuide) 源码为主要读取入口，并通过[学习路线页面](https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/)和[面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)抽样核对公开部署结果。
 
 默认形式：
 
 > 我提问 → Claude 定位当前主线 → 回答并按需提供带注释教学代码 → 判断是否应回归主线 → 给出一个明确下一步。
 
 本仓库不要求实际运行代码，但会在知识点确有需要时构建小型代码文件，帮助理解 PyTorch、CUDA、分布式训练和推理系统中的必要代码。代码会注明 shape、dtype、device 假设、关键数据流、简化之处以及“未经本环境运行验证”。
+
+## 外部基准读取方式
+
+默认采用 **GitHub source-first、deployed website verification、primary-source fact-checking**：
+
+- 从 AIInfraGuide 官方仓库的 Markdown、frontmatter、collection schema 和页面分组代码批量恢复路线与面试原文；
+- 每轮正式同步记录上游 `main` 的 commit SHA 和核对日期，题目引用保留源文件路径、题号和公开页面 URL；
+- 部署网站只做公开链接、导航、统计和渲染结果的抽样核对，不再逐页抓取作为主要输入；
+- 技术机制、公式、版本和性能结论仍回到论文、标准、官方文档或对应项目官方仓库核查；
+- 临时浅克隆放入忽略提交的 `.cache/AIInfraGuide/`，本仓库只提交提炼后的路线、题卡和来源快照。
+
+当前固定版本、源文件路径、统计复核和增量更新流程见 [resources/ai-infra-guide-source.md](resources/ai-infra-guide-source.md)。
 
 ## 学习主线
 
@@ -19,7 +31,7 @@
 
 ## 双轴学习：知识主线与真实面试需求
 
-本仓库不把面试准备放到学习结束后才突击，而是把 [网站面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/) 中的公司面经和综合题库嵌入每个主题。首页当前显示 181 篇面经、65 家公司、7 个梯队；这些是网站收录统计，不代表行业总体频率：
+本仓库不把面试准备放到学习结束后才突击，而是把 AIInfraGuide 官方仓库 `docs/interview/` 中的公司面经和综合题库嵌入每个主题，并通过[部署后的面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)抽样核对公开入口。当前固定源码版本统计为 181 篇面经、65 家公司、7 个梯队；这些是该版本的收录统计，不代表行业总体频率：
 
 - **知识主线**保证概念依赖和系统结构完整；
 - **面试需求轴**校准真实岗位关注点、回答深度、定量能力和工程 trade-off；

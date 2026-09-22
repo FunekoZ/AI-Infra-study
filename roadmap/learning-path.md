@@ -1,6 +1,6 @@
 # AI Infra 系统学习路线
 
-> 外部基准：[AIInfraGuide 学习路线](https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/)与 [AIInfraGuide 面试宝典](https://caomaolufei.github.io/AIInfraGuide/interview/)（知识路线页面标注日期：2026-03-26；最近核对日期：2026-09-21）。
+> 外部基准：[AIInfraGuide 官方仓库](https://github.com/caomaolufei/AIInfraGuide)中的路线与面试源码为主要读取入口，[学习路线公开页](https://caomaolufei.github.io/AIInfraGuide/guides/ai-infra%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/)与[面试宝典公开页](https://caomaolufei.github.io/AIInfraGuide/interview/)用于部署一致性核对（当前固定上游版本：`main@a3b63eeb81d6d36a3c42c8cfc5a1bdd96e36bab1`；核对日期：2026-09-22；路线 frontmatter `pubDate`：2026-03-26）。
 >
 > 本文件保留网站的四阶段范围与先后关系，并将代码和实验要求转换为知识理解、推导及教学代码阅读能力。项目可以创建带充分注释的学习代码，但默认不要求实际运行。
 

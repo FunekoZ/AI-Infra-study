@@ -1,6 +1,6 @@
 # 前置知识面试题
 
-本阶段将收录经网站来源核对的问题，范围包括编程与系统基础、数学、Transformer、PyTorch、GPU 基础和集合通信。
+本阶段收录经 AIInfraGuide 固定源码版本核对的问题，范围包括编程与系统基础、数学、Transformer、PyTorch、GPU 基础和集合通信。第一版跨阶段题簇见 [../core-question-map.md](../core-question-map.md)；本目录后续只保存进入学习或需要详细回答骨架的阶段题卡，避免复制整份索引。
 
 当前主题首先关注：
 
@@ -10,4 +10,4 @@
 - Attention 参数量、计算量与 `O(S²)`；
 - GPU/通信基础为什么会成为后续 AI Infra 优化前提。
 
-具体原题、公司/岗位信息和出现次数将在 `source-index.md` 核对完成后写入，不凭印象补题。
+当前代表题已确定为：Decoder-only 全链路、Attention shape、scale、causal mask、MHA 实现和 GQA 递进。它们在 [../core-question-map.md](../core-question-map.md) 中保留源文件、题号与 `unseen` 状态；尚未开始作答，不因完成索引而视为掌握。
