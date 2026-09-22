@@ -542,6 +542,21 @@ resources:
     local_path: null
     notes: "官方代码仓库。"
 
+  - id: learn-cuda-repository
+    title: "Learn CUDA with PyTorch"
+    type: repository
+    authors: ["gau-nernst"]
+    url: "https://github.com/gau-nernst/learn-cuda"
+    license: null
+    source_ref: "main@8c4d1b887a25727b320bc3ace19b63e2db6f8b44"
+    verified_at: "2026-09-22"
+    topics: [cuda, triton, operators, gemm, reduction, softmax, attention, profiling, p2p]
+    status: reading
+    local_path: "resources/learn-cuda-source.md"
+    source_tier: community
+    verification: cross-checked
+    notes: "作者持续迭代的 CUDA/Triton/PyTorch extension 代码阅读仓库，覆盖 vector add、SIMT/Tensor Core GEMM、Reduce、Softmax、Attention、P2P、GEMV 和 megakernel。作为阶段 1 的配套实践轨道纳入，不替代 CUDA/Triton 官方资料；固定 commit 未发现 LICENSE/COPYING/NOTICE，因此只保存链接、版本与学习映射，不复制上游代码或 benchmark。README 的性能数字依赖特定 GPU、CUDA/PyTorch 版本，只作为上下文。"
+
   - id: triton-repository
     title: "Triton"
     type: repository

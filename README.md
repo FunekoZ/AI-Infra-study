@@ -23,7 +23,7 @@
 ## 学习主线
 
 1. **前置知识**：Python、C/C++、Linux、数学、Transformer、PyTorch、GPU 与集合通信。
-2. **CUDA 与算子优化**：GPU 架构、内存层次、Kernel、Reduce、GEMM、Softmax、FlashAttention、Triton 和性能分析。
+2. **CUDA 与算子优化**：GPU 架构、内存层次、Kernel、Reduce、GEMM、Softmax、FlashAttention、Triton 和性能分析；阶段 1 使用 [learn-cuda](https://github.com/gau-nernst/learn-cuda) 作为固定版本的代码阅读 companion，不替代官方资料。
 3. **分布式训练**：优化器显存、DDP、FSDP、ZeRO、TP、PP、SP、MoE、混合精度和重计算。
 4. **推理与部署**：Prefill/Decode、KV Cache、PagedAttention、Continuous Batching、量化、Speculative Decoding、Prefill/Decode 解耦和 Benchmark 方法论。
 

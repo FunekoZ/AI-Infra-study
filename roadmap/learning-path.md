@@ -91,7 +91,7 @@ AI Infra 的核心是在约束下协调以下维度：
 
 ### 面试导向验收
 
-以下题型必须纳入本阶段题库；具体原题和出处以网站面试材料索引为准：
+具体题型必须与 AIInfraGuide 固定源码版本的 `interview/source-index.md` 和阶段题卡对应：
 
 - 从输入 shape 出发，白板推导 Self-Attention、多头拆分和输出 shape；
 - 解释为什么除以 `sqrt(d_k)`、causal mask 放在哪里、softmax 为什么沿指定维度；
@@ -127,6 +127,20 @@ AI Infra 的核心是在约束下协调以下维度：
 - Triton、`torch.compile`、Graph Break；了解 TVM/XLA。
 - Nsight Systems 与 Nsight Compute 的分析视角。
 
+### 代码阅读配套轨道：`learn-cuda`（非替代课程）
+
+将 [gau-nernst/learn-cuda](https://github.com/gau-nernst/learn-cuda/tree/8c4d1b887a25727b320bc3ace19b63e2db6f8b44) 作为阶段 1 的高密度代码阅读资料，而不是新的独立阶段或官方事实来源。推荐顺序：
+
+1. `01_vector_addition`：PyTorch C++/CUDA extension、输入检查、grid/block、kernel 边界和输出生命周期；
+2. `03_sum`：树形归约、thread coarsening、warp shuffle 与向量化加载；
+3. `02_matmul_simt`：层次化 tiling、Shared Memory、寄存器复用、coalescing 与 Triton 对照；
+4. `04_softmax`：数值稳定、online softmax、split-N 与 atomic 代价；
+5. `07_attention`：从基础 Attention kernel 到 FlashAttention 风格的分块、流水线和访存优化；
+6. `10_p2p`：放到 GPU 拓扑/NCCL 前后作阶段 2 桥接；`11_gemv`、`12_megakernel` 放到推理阶段学习 decode/GQA/KV Cache 后再选读；
+7. `02_matmul_sm80`、`sm100`、`sm120`、`05_fp6`、`08/09` 和 `02_matmul_cdna3` 作为硬件或低精度专项，不列为基础必修。
+
+仓库无明确许可证，且代码和 benchmark 依赖特定 GPU、CUDA/PyTorch 版本；本项目只保存固定 commit、目录映射和自己的解释，不复制上游源代码或把 README 性能数字当作路线结论。
+
 ### 理论验收
 
 - [ ] 解释 GPU 存储层次为何导致 Memory Wall，以及 latency、bandwidth 和 capacity 的关系。
@@ -139,9 +153,18 @@ AI Infra 的核心是在约束下协调以下维度：
 - [ ] 区分 Nsight Systems 的全链路时间线视角与 Nsight Compute 的 Kernel 级视角。
 - [ ] 给定症状，判断算子更可能是 Memory Bound、Compute Bound 还是受 launch/同步影响。
 
+### 代码阅读验收
+
+- [ ] 能从 `01_vector_addition` 解释 PyTorch extension 到 CUDA kernel 的 Host—Device 数据流，并指出 dtype、contiguous 和边界假设；
+- [ ] 能比较 `03_sum` 中树形归约、Shared Memory 和 Warp Shuffle 的同步、访存及 occupancy 代价；
+- [ ] 能从 `02_matmul_simt` 解释 block/warp/thread tiling、寄存器累加、Shared Memory 复用和 Bank Conflict；
+- [ ] 能从 `04_softmax` 与 `07_attention` 连接 online softmax、mask、tile、流水线和 HBM I/O；
+- [ ] 能用 `02_matmul_simt/matmul_triton.py` 对比 CUDA 的 thread/block 抽象与 Triton 的 program/mask/autotune 抽象；
+- [ ] 能明确代码版本、GPU 架构、dtype、shape 和 benchmark 环境假设；未实际运行时不得声称代码或性能已经验证。
+
 ### 面试导向验收
 
-以下题型必须纳入本阶段题库；具体原题和出处以网站面试材料索引为准：
+具体题型必须与 AIInfraGuide 固定源码版本的 `interview/source-index.md` 和阶段题卡对应：
 
 - 解释 warp、SM、occupancy、coalesced access 和 Bank Conflict，并判断给定访存模式；
 - 手写或口述 Reduce、Transpose、GEMM、Softmax 的朴素方案及逐步优化；
@@ -185,7 +208,7 @@ AI Infra 的核心是在约束下协调以下维度：
 
 ### 面试导向验收
 
-以下题型必须纳入本阶段题库；具体原题和出处以网站面试材料索引为准：
+具体题型必须与 AIInfraGuide 固定源码版本的 `interview/source-index.md` 和阶段题卡对应：
 
 - 逐项计算训练显存，并解释不同文章为什么可能得到不同 bytes/parameter；
 - 比较 DP、DDP、FSDP、ZeRO 各阶段的切分对象、collective 和通信时机；
@@ -254,7 +277,7 @@ AI Infra 的核心是在约束下协调以下维度：
 
 ### 面试导向验收
 
-以下题型必须纳入本阶段题库；具体原题和出处以网站面试材料索引为准：
+具体题型必须与 AIInfraGuide 固定源码版本的 `interview/source-index.md` 和阶段题卡对应：
 
 - 比较 Prefill 与 Decode 的计算特征、并行性和主要瓶颈；
 - 给定模型、batch、序列长度与 dtype 推导 KV Cache 容量；
@@ -285,6 +308,8 @@ AI Infra 的核心是在约束下协调以下维度：
 ### CUDA 与分布式阶段
 
 - CUDA C++ Programming Guide；
+- [learn-cuda 代码阅读配套仓库](https://github.com/gau-nernst/learn-cuda/tree/8c4d1b887a25727b320bc3ace19b63e2db6f8b44)（按 `01 → 03 → 02_simt → 04 → 07` 阅读，固定版本与许可证边界见 `resources/learn-cuda-source.md`）；
+- Triton 官方 Tutorials（先完成基础教程，再阅读仓库中的 Triton 对照实现）；
 - Online Softmax、FlashAttention 系列；
 - Megatron-LM 与 ZeRO；
 - PyTorch DDP/FSDP、DeepSpeed 官方资料。

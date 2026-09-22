@@ -3,7 +3,7 @@
 资料元数据统一登记在 [resources.yaml](resources.yaml)。
 
 - [ai-infra-guide-source.md](ai-infra-guide-source.md)：AIInfraGuide 固定 commit、主要源文件、统计复核、内容指纹和重新同步流程。
-
+- [learn-cuda-source.md](learn-cuda-source.md)：learn-cuda 固定 commit、目录评估、阶段映射、版本假设和代码复用边界。
 - `papers/`：来源可信且允许保存的论文原文。
 - `docs/`：来源可信且允许本地保存的官方文档、课程材料或网络文章。
 

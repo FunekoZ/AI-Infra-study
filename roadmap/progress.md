@@ -25,7 +25,7 @@
 - **分支退出条件**：无活动分支
 - **唯一下一步**：开始 M1 第一项：理解并口述 Decoder-only Transformer 从 token embedding 经过 Pre-Norm、Masked Self-Attention、residual、FFN 到输出 hidden states 的整体数据流，同时标注每一步 `(B, S, D)` shape。
 - **完成标准**：不看资料画出或口述一个 Decoder Block；说明两条 residual 路径、normalization 位置、Attention 与 FFN 的输入输出；能回答 `CQ-0-TRANSFORMER-FLOW` 的主问题，暂不要求本轮完成 Q/K/V 拆头细节。
-- **关联笔记、代码、面试与资料**：`notes/00-prerequisites/`、`examples/00-prerequisites/`、`interview/core-question-map.md`、`interview/source-index.md`、`resources/ai-infra-guide-source.md`、`resources/resources.yaml`
+- **关联笔记、代码、面试与资料**：`notes/00-prerequisites/`、`examples/00-prerequisites/`、`interview/core-question-map.md`、`interview/source-index.md`、`resources/ai-infra-guide-source.md`、`resources/learn-cuda-source.md`、`resources/resources.yaml`
 
 ## 当前概览
 
@@ -65,9 +65,26 @@
 - [ ] 对本主题代表性面试题给出结构化回答并处理至少一个递进追问。
 - [ ] 通过针对关键误区的知识与面试双重自检。
 
+### M2：CUDA/Triton 代码阅读轨道（阶段 1 预登记）
+
+- [x] 评估 `gau-nernst/learn-cuda` 的范围、版本、环境假设与许可证边界。
+- [x] 将其定位为阶段 1 的代码 companion，而不是当前主线、独立阶段或官方事实来源。
+- [x] 固定 `main@8c4d1b887a25727b320bc3ace19b63e2db6f8b44`，建立目录到路线的阅读映射。
+- [ ] 进入阶段 1 后按 `01_vector_addition → 03_sum → 02_matmul_simt → 04_softmax → 07_attention` 完成代码阅读验收。
+- [ ] 基础 Triton 官方教程完成后，对比 `matmul_triton.py` 的 program、mask、pointer arithmetic 和 autotune。
+- [ ] 在阶段 2/3 按需选读 `10_p2p`、`11_gemv` 与 `12_megakernel`，不提前展开。
+
 ## 学习日志
 
 按时间倒序记录。结论需标注为“资料结论”“原文推导”“面经样本”或“个人解释”。
+
+### 2026-09-22：纳入 `learn-cuda` 代码阅读轨道
+
+- **类型**：后续阶段资料与验收映射；不改变当前 Transformer 主线。
+- **资料结论**：固定核对 `gau-nernst/learn-cuda main@8c4d1b887a25727b320bc3ace19b63e2db6f8b44`。仓库覆盖 PyTorch CUDA extension、SIMT/Tensor Core GEMM、Reduce、Softmax、Attention、Triton 对照、P2P、GEMV 和 LLM megakernel，但属于作者持续迭代的代码/benchmark worklog，不是完整课程或官方事实来源。
+- **采用方式**：阶段 1 按 `01_vector_addition → 03_sum → 02_matmul_simt → 04_softmax → 07_attention` 阅读；高级硬件、低精度、P2P、GEMV 和 megakernel 延后到相应阶段选读。
+- **边界**：固定 commit 未发现明确许可证，不复制其代码；README 性能数字受 GPU、功耗、CUDA/PyTorch 和 shape 影响，不作为本项目既成性能结论；默认不要求运行。
+- **进度变化**：只完成未来课程融合和来源登记，阶段 1 仍为 `未开始`，当前唯一下一步仍是 Decoder-only Transformer Block 数据流。
 
 ### 2026-09-22：完成正式学习前的外部基准与题卡初始化
 
