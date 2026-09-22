@@ -70,6 +70,8 @@
 - [x] 评估 `gau-nernst/learn-cuda` 的范围、版本、环境假设与许可证边界。
 - [x] 将其定位为阶段 1 的代码 companion，而不是当前主线、独立阶段或官方事实来源。
 - [x] 固定 `main@8c4d1b887a25727b320bc3ace19b63e2db6f8b44`，建立目录到路线的阅读映射。
+- [x] 完成最小融合：资源快照、阶段 1 路线节点、笔记/示例入口和许可证边界已落盘。
+- [x] 复核 `refs/heads/main` 仍指向固定 commit，并核对源码树文件数量；未发现上游版本变化或许可证文件。
 - [ ] 进入阶段 1 后按 `01_vector_addition → 03_sum → 02_matmul_simt → 04_softmax → 07_attention` 完成代码阅读验收。
 - [ ] 基础 Triton 官方教程完成后，对比 `matmul_triton.py` 的 program、mask、pointer arithmetic 和 autotune。
 - [ ] 在阶段 2/3 按需选读 `10_p2p`、`11_gemv` 与 `12_megakernel`，不提前展开。
@@ -77,6 +79,12 @@
 ## 学习日志
 
 按时间倒序记录。结论需标注为“资料结论”“原文推导”“面经样本”或“个人解释”。
+
+### 2026-09-22：复核 `learn-cuda` 固定版本
+
+- **类型**：来源复核；不改变当前 Transformer 主线。
+- **完成**：确认 `refs/heads/main` 仍为 `8c4d1b887a25727b320bc3ace19b63e2db6f8b44`，源码树仍为 119 个文件（44 `.cu`、11 `.cpp`、11 `.h`、33 `.py`、14 `.md`）；API 仍未识别许可证，仓库未归档。
+- **进度变化**：没有新增 CUDA/Triton 知识验收；最小融合已完成，阶段 1 代码阅读仍待未来进入阶段 1 后执行；当前唯一下一步仍为 Decoder-only Transformer 数据流。
 
 ### 2026-09-22：纳入 `learn-cuda` 代码阅读轨道
 

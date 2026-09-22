@@ -23,6 +23,7 @@ AIInfraGuide 等持续更新的外部代码仓库默认浅克隆到 `.cache/<rep
 
 - `source_tier`：来源层级；
 - `verification`：`unverified` / `cross-checked` / `primary-source`；
+- `license`：代码仓库记录已识别的许可证标识；未发现时使用 `null`，不能从公开可访问推断出可复制授权；
 - `notes`：核查依据、适用范围和已知局限。
 
 阅读状态约定：

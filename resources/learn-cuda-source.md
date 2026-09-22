@@ -7,6 +7,7 @@
 - **仓库**：https://github.com/gau-nernst/learn-cuda
 - **分支**：`main`
 - **固定 commit**：`8c4d1b887a25727b320bc3ace19b63e2db6f8b44`
+- **当前 `main` 复核**：截至本轮复核，`refs/heads/main` 仍解析到上述 commit
 - **commit 时间**：2026-09-07T07:59:32Z
 - **上游最近 push（核对时 API 元数据）**：2026-09-22T13:34:52Z；与当前 HEAD commit 时间不同，不将 push 时间当作 commit 时间
 - **核对日期**：2026-09-22
@@ -17,7 +18,7 @@
 
 ## 仓库事实
 
-上游 README 将仓库定位为 **Learn CUDA with PyTorch**，提供 CUDA C++/PyTorch C++ extension、Triton 和部分 CuTe DSL 的对照代码与性能分析笔记。当前树约含 119 个跟踪文件，其中包括约 44 个 `.cu`、33 个 `.py` 和 14 个 `.md` 文件；它更像作者持续迭代的代码阅读/实验仓库，不是带统一章节、测试和课程验收的教材。
+上游 README 将仓库定位为 **Learn CUDA with PyTorch**，提供 CUDA C++/PyTorch C++ extension、Triton 和部分 CuTe DSL 的对照代码与性能分析笔记。当前树准确含 119 个跟踪文件：44 个 `.cu`、11 个 `.cpp`、11 个 `.h`、33 个 `.py` 和 14 个 `.md` 文件；它更像作者持续迭代的代码阅读/实验仓库，不是带统一章节、测试和课程验收的教材。
 
 主要主题目录：
 
